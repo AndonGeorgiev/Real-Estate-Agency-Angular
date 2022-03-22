@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const databaseConfig = require('./config/DB.js');
-const { PORT } = require('./constant.js')
+const { PORT } = require('./constant.js');
 
 require('./config/express.js')(app);
 
