@@ -10,7 +10,7 @@ import { switchMap, tap } from 'rxjs'
 })
 export class EstateDetailsComponent implements OnInit {
 
-  estate?: IEstate;
+  estate!: IEstate;
   id: string = "";
   constructor(private activatedRoute: ActivatedRoute, private estatesService: EstatesService) { }
 
