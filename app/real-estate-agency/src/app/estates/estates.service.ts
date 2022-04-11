@@ -20,4 +20,8 @@ export class EstatesService {
   getEstates$() : Observable<IEstate[]>{
     return this.httpClient.get<IEstate[]>('http://localhost:3030/properties');
   }
+
+  getOneEstate$(id : string) : Observable<IEstate>{
+    return this.httpClient.get<IEstate>('http://localhost:3030/properties/' + id);
+  }
 }
