@@ -13,7 +13,6 @@ export class EstatesListComponent implements OnInit {
 
   ngOnInit(): void {
     this.estatesService.getEstates$().subscribe(estates => {
-      console.log(estates);
       this.estates = estates;
     })
   }
