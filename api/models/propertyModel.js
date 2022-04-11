@@ -12,12 +12,12 @@ const propertySchema = new mongoose.Schema({
     },
 
     price: {
-        type: number,
+        type: 'number',
         required: [true, 'The input price is required!'],
     },
 
     address: {
-        type: number,
+        type: 'string',
         required: [true, 'The input address is required!'],
     },
 
@@ -26,12 +26,12 @@ const propertySchema = new mongoose.Schema({
         required: [true, 'The input description is required!'],
     },
 
-    broker: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'user'
-    },
+    // broker: {
+    //     type: mongoose.Schema.Types.ObjectId,
+    //     ref: 'user'
+    // },
 
-    likes: [{ type: mongoose.Schema.Types.ObjectId, ref: 'user' }],
+    // likes: [{ type: mongoose.Schema.Types.ObjectId, ref: 'user' }],
 
 
 });
