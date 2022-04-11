@@ -1,0 +1,22 @@
+article {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 50px;
+}
+
+h2 {
+    font-family: 'Anek Bangla', sans-serif;
+    font-size: 25px;
+}
+
+img {
+    width: 60%;
+}
