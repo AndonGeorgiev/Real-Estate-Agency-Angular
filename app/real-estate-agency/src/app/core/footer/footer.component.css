@@ -1,0 +1,14 @@
+footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: #163A5F;
+}
+
+p {
+    color: #fff;
+    font-size: 18px;
+    font-family: 'Anek Bangla', sans-serif;
+}
