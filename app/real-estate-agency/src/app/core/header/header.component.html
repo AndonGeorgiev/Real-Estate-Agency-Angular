@@ -1,0 +1,21 @@
+<header>
+    <nav>
+        <h1><a routerLink="/">Real Estate</a></h1>
+        <ul>
+            <div *ngIf="isUser">
+                <li><a routerLink="/catalog">Catalog</a></li>
+                <div isBroker>
+                    <li><a routerLink="/catalog/create">Add Estate</a></li>
+                </div>
+                <li><a routerLink="/profile/:id">My Profile</a></li>
+
+            </div>
+
+
+            <div *ngIf="!isUser">
+                <li><a routerLink="/register">Register</a></li>
+                <li><a routerLink="/login">Login</a></li>
+            </div>
+        </ul>
+    </nav>
+</header>

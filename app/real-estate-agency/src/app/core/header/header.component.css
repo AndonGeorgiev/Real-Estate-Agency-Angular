@@ -1,0 +1,29 @@
+nav {
+    display: flex;
+    margin: 0;
+    background-color: #163A5F;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+div {
+    display: flex;
+    list-style: none;
+}
+
+li {
+    margin: 0 20px;
+}
+
+a {
+    text-decoration: none;
+    font-family: 'Anek Bangla', sans-serif;
+    letter-spacing: .1rem;
+    color: #fff;
+}
+
+ul li a {
+    font-size: 20px;
+    color: #45EBA5;
+}

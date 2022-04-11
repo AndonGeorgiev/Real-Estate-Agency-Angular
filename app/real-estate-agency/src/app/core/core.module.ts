@@ -8,12 +8,14 @@ import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
+    HeaderComponent,
   ],
   imports: [
     CommonModule,
     RouterModule,
   ],
   exports: [
+    HeaderComponent,
   ]
 })
 export class CoreModule { }
