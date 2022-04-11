@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { EstateDetailsComponent } from './estates/estate-details/estate-details.component';
 import { EstatesListComponent } from './estates/estates-list/estates-list.component';
 import { HomeComponent } from './pages/home/home.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
@@ -11,7 +12,13 @@ const routes: Routes = [
   },
   {
     path: 'catalog',
+    pathMatch: 'full',
     component: EstatesListComponent,
+  },
+  {
+    path: 'catalog/:id',
+    pathMatch: 'full',
+    component: EstateDetailsComponent,
   },
   {
     path: '**',
