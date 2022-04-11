@@ -1,0 +1,43 @@
+img {
+    width: 100%;
+}
+
+div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+}
+
+article {
+    box-shadow: 12px 11px 16px -5px #B3B3B3;
+}
+
+a {
+    font-size: 22px;
+    text-decoration: none;
+    margin-top: 20px;
+    background-color: #10566E;
+    color: #fff;
+    padding: 5px 40px;
+    border-radius: 20px;
+}
+
+h2 {
+    text-transform: uppercase;
+    margin: 0;
+    font-size: 20px;
+}
+
+p {
+    font-size: 18px;
+    margin: 2px;
+}
+
+a,
+p,
+h2,
+span {
+    font-family: 'Anek Bangla', sans-serif;
+}

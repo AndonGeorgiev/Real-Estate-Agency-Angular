@@ -1,0 +1,9 @@
+<article class="card">
+    <img [src]="estate.img" alt="">
+    <div class="content">
+        <h2>{{estate.title}}</h2>
+        <p>Price: <span>{{estate.price}}</span> $</p>
+        <p>Address: <span>{{estate.address}}</span></p>
+        <a [routerLink]="'/catalog/estate/' + estate._id">Details</a>
+    </div>
+</article>
