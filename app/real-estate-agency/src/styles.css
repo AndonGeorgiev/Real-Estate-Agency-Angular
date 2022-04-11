@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@500&family=Pacifico&display=swap');
+
+/* font-family: 'Anek Bangla', sans-serif; */
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Wet+Paint&display=swap');
+
+/* font-family: 'Rubik Wet Paint', cursive; */
+
+body {
+    margin: 0;
+    padding: 0;
+}
