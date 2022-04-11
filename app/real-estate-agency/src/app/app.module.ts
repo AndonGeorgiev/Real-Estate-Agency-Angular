@@ -8,6 +8,7 @@ import { CoreModule } from './core/core.module';
 import { EstatesModule } from './estates/estates.module';
 import {  HomeComponent} from './pages/home/home.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
     CoreModule,
     EstatesModule,
     HttpClientModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
