@@ -26,6 +26,11 @@ const propertySchema = new mongoose.Schema({
         required: [true, 'The input description is required!'],
     },
 
+    views: {
+        type: Number,
+        default: 0,
+    }
+
     // broker: {
     //     type: mongoose.Schema.Types.ObjectId,
     //     ref: 'user'
