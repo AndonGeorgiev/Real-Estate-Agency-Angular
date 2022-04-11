@@ -1,8 +1,7 @@
 h2,
 p,
 h3,
-span,
-a {
+span {
     font-family: 'Anek Bangla', sans-serif;
     margin: 7px 0;
 }
@@ -50,16 +49,6 @@ a {
 
 #guest article .content p {
     font-size: 20px;
-}
-
-#guest article .content a {
-    font-size: 19px;
-    text-decoration: none;
-    margin-top: 20px;
-    background-color: #10566E;
-    color: #fff;
-    padding: 5px 20px;
-    border-radius: 20px;
 }
 
 #guest article img {

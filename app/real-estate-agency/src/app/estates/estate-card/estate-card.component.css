@@ -1,5 +1,6 @@
 img {
     width: 100%;
+    height: 50%;
 }
 
 div {
@@ -12,16 +13,7 @@ div {
 
 article {
     box-shadow: 12px 11px 16px -5px #B3B3B3;
-}
-
-a {
-    font-size: 22px;
-    text-decoration: none;
-    margin-top: 20px;
-    background-color: #10566E;
-    color: #fff;
-    padding: 5px 40px;
-    border-radius: 20px;
+    height: 100%;
 }
 
 h2 {
@@ -35,7 +27,6 @@ p {
     margin: 2px;
 }
 
-a,
 p,
 h2,
 span {

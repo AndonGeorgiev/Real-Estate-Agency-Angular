@@ -8,7 +8,7 @@
         <div class="content">
             <h2>You want find your new house?</h2>
             <p>Here is the perfect place to buy your new house or apartment!</p>
-            <a routerLink="/catalog">See all possibilities</a>
+            <app-button [url]="'/catalog'" [content]="'See all possibilities'"></app-button>
         </div>
         <img src="../../../assets/picture/houseForBuy.png" alt="">
 
@@ -19,7 +19,7 @@
         <div class="content">
             <h2>You are broker, who wants find new customers?</h2>
             <p>Here is the perfect place to find your new customers and sell your estates!</p>
-            <a routerLink="/register/brokers">Register as a broker now!</a>
+            <app-button [url]="'/register/brokers'" [content]="'Register as a broker now!'"></app-button>
         </div>
 
 

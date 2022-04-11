@@ -4,6 +4,7 @@ import { EstateCardComponent } from './estate-card/estate-card.component';
 import { EstatesListComponent } from './estates-list/estates-list.component';
 import { RouterModule } from '@angular/router';
 import { EstateDetailsComponent } from './estate-details/estate-details.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -16,6 +17,7 @@ import { EstateDetailsComponent } from './estate-details/estate-details.componen
   imports: [
     CommonModule,
     RouterModule,
+    SharedModule,
   ],
   exports: [
     EstatesListComponent,
