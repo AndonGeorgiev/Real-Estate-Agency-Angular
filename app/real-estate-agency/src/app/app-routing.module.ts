@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { LoginComponent } from './auth/login/login.component';
+import { RegisterComponent } from './auth/register/register.component';
 import { EstateDetailsComponent } from './estates/estate-details/estate-details.component';
 import { EstatesListComponent } from './estates/estates-list/estates-list.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -19,6 +21,15 @@ const routes: Routes = [
     path: 'catalog/:id',
     pathMatch: 'full',
     component: EstateDetailsComponent,
+  },
+ 
+  {
+    path: 'login',
+    component: LoginComponent,
+  },
+  {
+    path: 'register',
+    component: RegisterComponent,
   },
   {
     path: '**',

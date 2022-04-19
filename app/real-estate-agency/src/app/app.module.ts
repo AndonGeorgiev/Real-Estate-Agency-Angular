@@ -9,13 +9,17 @@ import { EstatesModule } from './estates/estates.module';
 import {  HomeComponent} from './pages/home/home.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { SharedModule } from './shared/shared.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AuthModule } from './auth/auth.module';
+
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    NotFoundComponent
-    
+    NotFoundComponent, 
   ],
   imports: [
     BrowserModule,
@@ -23,7 +27,9 @@ import { SharedModule } from './shared/shared.module';
     CoreModule,
     EstatesModule,
     HttpClientModule,
-    SharedModule
+    SharedModule,
+    NgbModule,
+    AuthModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
