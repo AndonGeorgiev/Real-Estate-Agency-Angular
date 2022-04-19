@@ -9,6 +9,7 @@ export interface IEstate{
   "price": number,
   "address": string,
   "description": string,
+  "views": number,
 }
 @Injectable({
   providedIn: 'root'
