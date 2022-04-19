@@ -9,6 +9,5 @@
 /* font-family: 'Rubik Wet Paint', cursive; */
 
 body {
-    margin: 0;
-    padding: 0;
+    margin: 0 !important;
 }
