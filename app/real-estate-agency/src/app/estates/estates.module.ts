@@ -5,7 +5,8 @@ import { EstatesListComponent } from './estates-list/estates-list.component';
 import { RouterModule } from '@angular/router';
 import { EstateDetailsComponent } from './estate-details/estate-details.component';
 import { SharedModule } from '../shared/shared.module';
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -18,10 +19,13 @@ import { SharedModule } from '../shared/shared.module';
     CommonModule,
     RouterModule,
     SharedModule,
+    NgbModule,
+    FormsModule,
   ],
   exports: [
     EstatesListComponent,
     EstateDetailsComponent
-  ]
+  ],
+  bootstrap:[EstateDetailsComponent]
 })
 export class EstatesModule { }

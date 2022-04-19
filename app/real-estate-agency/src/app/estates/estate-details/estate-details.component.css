@@ -1,0 +1,113 @@
+article {}
+
+img {
+    margin: 50px;
+    width: 100%;
+    max-width: 750px;
+    grid-area: 'img';
+    border-radius: 12px;
+}
+
+.description {
+    margin: 50px;
+    grid-area: 'description';
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.content {
+    display: grid;
+    grid-template-areas: 'img img description';
+    gap: 20px;
+}
+
+#estate-text {
+    overflow: auto;
+    overflow-x: hidden;
+    height: auto;
+    max-height: 200px;
+}
+
+.description h2 {
+    text-align: center;
+    font-size: 40px;
+    margin: 0;
+    font-family: 'Anek Bangla', sans-serif;
+    padding: 0;
+}
+
+.description p {
+    text-align: start;
+    font-size: 20px;
+    margin: 0;
+    font-family: 'Anek Bangla', sans-serif;
+}
+
+.estate-info {
+    bottom: 0;
+    margin-top: 12px;
+}
+
+.estate-info p,
+span {
+    font-size: 23px;
+}
+
+span {
+    font-weight: bold;
+    color: #163A5F;
+}
+
+.broker,
+.user_actions {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 30px;
+    padding: 20px;
+    border: 3px solid #163A5F
+}
+
+.broker_action h3,
+.broker_statistic h3,
+.user_actions h3 {
+    text-align: center;
+    font-family: 'Anek Bangla', sans-serif;
+    margin: 10px;
+    font-size: 40px;
+}
+
+app-button {
+    margin: 0 12px;
+}
+
+h4 {
+    font-size: 25px;
+    font-family: 'Anek Bangla', sans-serif;
+    margin: 0;
+    text-align: center;
+    display: inline-block;
+    margin-left: 25px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    margin-bottom: 20px;
+    width: 200px;
+    height: 30px;
+}
+
+#submit {
+    width: 100px;
+    border: none;
+    background-color: #163A5F;
+    color: #fff;
+    font-family: 'Anek Bangla', sans-serif;
+}
+
+.broker_statistic {}
