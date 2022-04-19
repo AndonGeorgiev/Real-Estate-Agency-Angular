@@ -1,0 +1,43 @@
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+        <!-- Tabs Titles -->
+
+        <!-- Icon -->
+        <div class="fadeIn first">
+            <i class="fa-solid fa-user" id="icon" alt="User Icon"></i>
+        </div>
+
+        <!-- Login Form -->
+        <form [formGroup]="loginFormGroup" (ngSubmit)="handleLoginForm()">
+
+            <input formControlName="email" type="text" id="login" class="fadeIn second" name="login" placeholder="email">
+
+            <ng-container *ngIf="loginFormGroup.controls['email'].touched && loginFormGroup.controls['email'].invalid ">
+                <p *ngIf="loginFormGroup.controls['email'].errors?.['required']" class="error">
+                    Email is required!
+                </p>
+                <p *ngIf="loginFormGroup.controls['email'].errors?.['email']" class="error">
+                    Email invalid!
+                </p>
+            </ng-container>
+
+            <input type="password" formControlName="password" id="password" class="fadeIn third" name="login" placeholder="password">
+
+            <ng-container *ngIf="loginFormGroup.controls['password'].touched && loginFormGroup.controls['password'].invalid ">
+                <p *ngIf="loginFormGroup.controls['password'].errors?.['required']" class="error">
+                    Password is required!
+                </p>
+                <p *ngIf="loginFormGroup.controls['password'].errors?.['minlength']" class="error">
+                    Min length is 8 characters!
+                </p>
+            </ng-container>
+
+            <input type="submit" [disabled]="loginFormGroup.invalid" class="fadeIn fourth" value="Log In">
+        </form>
+
+        <div id="formFooter">
+            <a class="underlineHover" [routerLink]="'/register'">Register now!</a>
+        </div>
+
+    </div>
+</div>
