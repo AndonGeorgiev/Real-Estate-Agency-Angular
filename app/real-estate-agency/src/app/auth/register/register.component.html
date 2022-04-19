@@ -1,0 +1,66 @@
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+        <!-- Tabs Titles -->
+
+        <!-- Icon -->
+        <div class="fadeIn first">
+            <i class="fa-solid fa-user" id="icon" alt="User Icon"></i>
+        </div>
+
+        <!-- Login Form -->
+        <form [formGroup]="registerFormGroup" (ngSubmit)="handleRegisterForm()">
+
+            <input formControlName="email" type="text" id="login" class="fadeIn second" name="login" placeholder="email">
+
+            <ng-container *ngIf="registerFormGroup.controls['email'].touched && registerFormGroup.controls['email'].invalid ">
+                <p *ngIf="registerFormGroup.controls['email'].errors?.['required']" class="error">
+                    Email is required!
+                </p>
+                <p *ngIf="registerFormGroup.controls['email'].errors?.['email']" class="error">
+                    Email invalid!
+                </p>
+            </ng-container>
+
+            <input type="password" formControlName="password" id="password" class="fadeIn third" name="login" placeholder="password">
+
+            <ng-container *ngIf="registerFormGroup.controls['password'].touched && registerFormGroup.controls['password'].invalid ">
+                <p *ngIf="registerFormGroup.controls['password'].errors?.['required']" class="error">
+                    Password is required!
+                </p>
+                <p *ngIf="registerFormGroup.controls['password'].errors?.['minlength']" class="error">
+                    Min length is 8 characters!
+                </p>
+            </ng-container>
+
+            <input type="password" formControlName="re-password" id="re-password" class="fadeIn third" name="login" placeholder="re-password">
+            <ng-container *ngIf="registerFormGroup.controls['re-password'].touched && registerFormGroup.controls['re-password'].invalid ">
+                <p *ngIf="registerFormGroup.controls['re-password'].errors?.['required']" class="error">
+                    Re-password is required!
+                </p>
+                <p *ngIf="registerFormGroup.controls['re-password'].errors?.['minlength']" class="error">
+                    Min length is 8 characters!
+                </p>
+            </ng-container>
+
+            <select name="role" id="role" class="fadeIn third" formControlName="role">
+                <option disabled selected value> -- select a role -- </option>
+                <option *ngFor="let role of roles" [ngValue]="role.value" >
+                    {{ role.name }}
+                  </option>
+            </select>
+
+            <ng-container *ngIf="registerFormGroup.controls['role'].touched && registerFormGroup.controls['role'].invalid ">
+                <p *ngIf="registerFormGroup.controls['role'].errors?.['required']" class="error">
+                    Role is required!
+                </p>
+            </ng-container>
+
+            <input type="submit" [disabled]="registerFormGroup.invalid" class="fadeIn fourth" value="Register">
+        </form>
+
+        <div id="formFooter">
+            <a class="underlineHover" [routerLink]="'/login'">Log in!</a>
+        </div>
+
+    </div>
+</div>
