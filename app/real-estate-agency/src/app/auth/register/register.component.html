@@ -43,6 +43,13 @@
                 <p *ngIf="registerFormGroup.controls['re-password'].errors?.['minlength']" class="error">
                     Min length is 8 characters!
                 </p>
+
+                <p *ngIf="registerFormGroup.controls['re-password'].errors?.['passwordsMatch']" class="error">
+                    Passwords don't match!'
+                </p>
+
+
+
             </ng-container>
 
             <select name="role" id="role" [class.input-error]="registerFormGroup.controls['role'].touched && registerFormGroup.controls['role'].invalid " [class.input-valid]="registerFormGroup.controls['role'].touched && registerFormGroup.controls['role'].valid"

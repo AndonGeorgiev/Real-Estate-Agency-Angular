@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { passwordsMatch } from '../until';
 
 @Component({
   selector: 'app-register',
@@ -12,10 +13,12 @@ export class RegisterComponent implements OnInit {
     { value: 'buyer', name: 'Buyer' },
     { value: 'broker', name: 'Broker' }
   ];
+
+  passwordControl = new FormControl('', [Validators.required, Validators.minLength(8)])
   registerFormGroup: FormGroup = this.formBuilder.group({
     'email': new FormControl('', [Validators.required, Validators.email]),
-    'password': new FormControl('', [Validators.required, Validators.minLength(8)]),
-    're-password': new FormControl('', [Validators.required, Validators.minLength(8)]),
+    'password': this.passwordControl,
+    're-password': new FormControl('', [Validators.required, Validators.minLength(8), passwordsMatch(this.passwordControl)], ),
     'role': new FormControl('', [Validators.required])
   })
   constructor(
@@ -26,7 +29,7 @@ export class RegisterComponent implements OnInit {
   }
 
   handleRegisterForm() : void {
-    console.log('test');
+    console.log(this.registerFormGroup.value);
     
   }
 
