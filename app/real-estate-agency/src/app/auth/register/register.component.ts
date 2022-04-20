@@ -26,7 +26,8 @@ export class RegisterComponent implements OnInit {
   }
 
   handleRegisterForm() : void {
-
+    console.log('test');
+    
   }
 
 }

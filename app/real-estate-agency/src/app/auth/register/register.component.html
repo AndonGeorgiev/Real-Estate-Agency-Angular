@@ -10,7 +10,8 @@
         <!-- Login Form -->
         <form [formGroup]="registerFormGroup" (ngSubmit)="handleRegisterForm()">
 
-            <input formControlName="email" type="text" id="login" class="fadeIn second" name="login" placeholder="email">
+            <input formControlName="email" type="text" id="login" [class.input-error]="registerFormGroup.controls['email'].touched && registerFormGroup.controls['email'].invalid " [class.input-valid]="registerFormGroup.controls['email'].touched && registerFormGroup.controls['email'].valid"
+                class="fadeIn second" name="login" placeholder="email">
 
             <ng-container *ngIf="registerFormGroup.controls['email'].touched && registerFormGroup.controls['email'].invalid ">
                 <p *ngIf="registerFormGroup.controls['email'].errors?.['required']" class="error">
@@ -21,7 +22,8 @@
                 </p>
             </ng-container>
 
-            <input type="password" formControlName="password" id="password" class="fadeIn third" name="login" placeholder="password">
+            <input type="password" formControlName="password" id="password" [class.input-error]="registerFormGroup.controls['password'].touched && registerFormGroup.controls['password'].invalid " [class.input-valid]="registerFormGroup.controls['password'].touched && registerFormGroup.controls['password'].valid"
+                class="fadeIn third" name="login" placeholder="password">
 
             <ng-container *ngIf="registerFormGroup.controls['password'].touched && registerFormGroup.controls['password'].invalid ">
                 <p *ngIf="registerFormGroup.controls['password'].errors?.['required']" class="error">
@@ -32,7 +34,8 @@
                 </p>
             </ng-container>
 
-            <input type="password" formControlName="re-password" id="re-password" class="fadeIn third" name="login" placeholder="re-password">
+            <input type="password" formControlName="re-password" id="re-password" [class.input-error]="registerFormGroup.controls['re-password'].touched && registerFormGroup.controls['re-password'].invalid " [class.input-valid]="registerFormGroup.controls['re-password'].touched && registerFormGroup.controls['re-password'].valid"
+                class="fadeIn third" name="login" placeholder="re-password">
             <ng-container *ngIf="registerFormGroup.controls['re-password'].touched && registerFormGroup.controls['re-password'].invalid ">
                 <p *ngIf="registerFormGroup.controls['re-password'].errors?.['required']" class="error">
                     Re-password is required!
@@ -42,7 +45,8 @@
                 </p>
             </ng-container>
 
-            <select name="role" id="role" class="fadeIn third" formControlName="role">
+            <select name="role" id="role" [class.input-error]="registerFormGroup.controls['role'].touched && registerFormGroup.controls['role'].invalid " [class.input-valid]="registerFormGroup.controls['role'].touched && registerFormGroup.controls['role'].valid"
+                class="fadeIn third" formControlName="role">
                 <option disabled selected value> -- select a role -- </option>
                 <option *ngFor="let role of roles" [ngValue]="role.value" >
                     {{ role.name }}
