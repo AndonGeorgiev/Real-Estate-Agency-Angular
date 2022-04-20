@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  isUser : boolean = true;
+  isUser : boolean = false;
   isBroker : boolean = true;
   constructor() { }
 
