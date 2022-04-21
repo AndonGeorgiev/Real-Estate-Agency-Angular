@@ -6,14 +6,16 @@ import { RouterModule } from '@angular/router';
 import { EstateDetailsComponent } from './estate-details/estate-details.component';
 import { SharedModule } from '../shared/shared.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CreateEstateComponent } from './create-estate/create-estate.component';
 
 
 @NgModule({
   declarations: [
     EstateCardComponent,
     EstatesListComponent,
-    EstateDetailsComponent
+    EstateDetailsComponent,
+    CreateEstateComponent
   ],
   imports: [
     CommonModule,
@@ -21,9 +23,11 @@ import { FormsModule } from '@angular/forms';
     SharedModule,
     NgbModule,
     FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     EstatesListComponent,
+    EstateDetailsComponent,
     EstateDetailsComponent
   ],
   bootstrap:[EstateDetailsComponent]

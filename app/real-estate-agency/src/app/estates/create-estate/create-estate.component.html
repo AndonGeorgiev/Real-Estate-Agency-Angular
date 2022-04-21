@@ -1,0 +1,77 @@
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+        <!-- Tabs Titles -->
+
+        <!-- Icon -->
+        <div class="fadeIn first">
+            <i class="fa-solid fa-house-chimney"></i>
+        </div>
+
+        <!-- Login Form -->
+        <form [formGroup]="createEstateFormGroup" (ngSubmit)="handleCreateEstateForm()">
+
+            <input formControlName="img" type="text" [class.input-error]="createEstateFormGroup.controls['img'].touched && createEstateFormGroup.controls['img'].invalid " [class.input-valid]="createEstateFormGroup.controls['img'].touched && createEstateFormGroup.controls['img'].valid"
+                class="fadeIn second" placeholder="Image url">
+
+            <ng-container *ngIf="createEstateFormGroup.controls['img'].touched && createEstateFormGroup.controls['img'].invalid ">
+                <p *ngIf="createEstateFormGroup.controls['img'].errors?.['required']" class="error">
+                    Image url is required!
+                </p>
+            </ng-container>
+
+            <input type="number" formControlName="price" [class.input-error]="createEstateFormGroup.controls['price'].touched && createEstateFormGroup.controls['price'].invalid " [class.input-valid]="createEstateFormGroup.controls['price'].touched && createEstateFormGroup.controls['price'].valid"
+                class="fadeIn third" placeholder="Price">
+
+            <ng-container *ngIf="createEstateFormGroup.controls['price'].touched && createEstateFormGroup.controls['price'].invalid ">
+                <p *ngIf="createEstateFormGroup.controls['price'].errors?.['required']" class="error">
+                    Price is required!
+                </p>
+            </ng-container>
+
+            <input type="text" formControlName="address" [class.input-error]="createEstateFormGroup.controls['address'].touched && createEstateFormGroup.controls['address'].invalid " [class.input-valid]="createEstateFormGroup.controls['address'].touched && createEstateFormGroup.controls['address'].valid"
+                class="fadeIn third" placeholder="Address">
+
+            <ng-container *ngIf="createEstateFormGroup.controls['address'].touched && createEstateFormGroup.controls['address'].invalid ">
+                <p *ngIf="createEstateFormGroup.controls['address'].errors?.['required']" class="error">
+                    Address is required!
+                </p>
+                <p *ngIf="createEstateFormGroup.controls['address'].errors?.['minlength']" class="error">
+                    Min length is 6 characters!
+                </p>
+            </ng-container>
+
+            <input type="text" formControlName="title" [class.input-error]="createEstateFormGroup.controls['title'].touched && createEstateFormGroup.controls['title'].invalid " [class.input-valid]="createEstateFormGroup.controls['title'].touched && createEstateFormGroup.controls['title'].valid"
+                class="fadeIn third" placeholder="Title">
+
+            <ng-container *ngIf="createEstateFormGroup.controls['title'].touched && createEstateFormGroup.controls['title'].invalid ">
+                <p *ngIf="createEstateFormGroup.controls['title'].errors?.['required']" class="error">
+                    Title is required!
+                </p>
+                <p *ngIf="createEstateFormGroup.controls['title'].errors?.['minlength']" class="error">
+                    Min length is 6 characters!
+                </p>
+            </ng-container>
+
+            <textarea formControlName="description" [class.input-error]="createEstateFormGroup.controls['description'].touched && createEstateFormGroup.controls['description'].invalid" [class.input-valid]="createEstateFormGroup.controls['description'].touched && createEstateFormGroup.controls['description'].valid"
+                class="fadeIn third" placeholder="description"></textarea>
+
+            <ng-container *ngIf="createEstateFormGroup.controls['description'].touched && createEstateFormGroup.controls['description'].invalid ">
+                <p *ngIf="createEstateFormGroup.controls['description'].errors?.['required']" class="error">
+                    description" is required!
+                </p>
+                <p *ngIf="createEstateFormGroup.controls['description'].errors?.['minlength']" class="error">
+                    Min length is 30 characters!
+                </p>
+
+                <p *ngIf="createEstateFormGroup.controls['description'].errors?.['maxlength']" class="error">
+                    Min length is 250 characters!
+                </p>
+
+
+            </ng-container>
+
+            <input type="submit" [disabled]="createEstateFormGroup.invalid" class="fadeIn fourth" value="Log In">
+        </form>
+
+    </div>
+</div>
