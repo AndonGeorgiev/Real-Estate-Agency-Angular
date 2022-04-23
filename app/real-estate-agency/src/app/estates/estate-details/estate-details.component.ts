@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EstatesService, IEstate } from '../estates.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { switchMap, tap } from 'rxjs'
 import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap'
 
@@ -15,7 +15,10 @@ export class EstateDetailsComponent implements OnInit {
   estate!: IEstate;
   id: string = "";
 
-  constructor(private activatedRoute: ActivatedRoute, private estatesService: EstatesService) { }
+  constructor(
+    private activatedRoute: ActivatedRoute, 
+    private estatesService: EstatesService,
+    private router: Router) { }
 
   ngOnInit(): void {
     // this.activatedRoute.params
@@ -38,6 +41,14 @@ export class EstateDetailsComponent implements OnInit {
         this.estate = estate;
         console.log(this.id);
       })
+  }
+
+  deleteHandle():void {
+    console.log(this.estate._id);
+    
+    this.estatesService.deleteEstate$(this.estate._id).subscribe(() =>{
+      this.router.navigate(['/catalog']); 
+     });
   }
 
 }

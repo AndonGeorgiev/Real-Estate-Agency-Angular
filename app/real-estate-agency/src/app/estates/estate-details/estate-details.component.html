@@ -17,7 +17,7 @@
             <h3>Actions</h3>
             <br>
             <app-button [url]="'/catalog/' + estate._id + '/sell'" [content]="'Sell'" [backgroundColor]="'green'"></app-button>
-            <app-button [url]="'/catalog/' + estate._id + '/delete'" [content]="'Delete'" [backgroundColor]="'red'"></app-button>
+            <button class="delete" (click)="deleteHandle()">delete</button>
             <app-button [url]="'/catalog/' + estate._id + '/edit'" [content]="'Edit'" [backgroundColor]="'yellow'"></app-button>
         </section>
 
