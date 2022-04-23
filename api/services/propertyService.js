@@ -8,4 +8,15 @@ exports.getOne = async(_id) => {
     property = await Property.findById(_id);
     return property;
 };
+
+exports.create = async(propertyInfo) => {
+    let newProperty = await Property.create(propertyInfo);
+
+    return newProperty;
+}
+
+exports.deleteProperty = async(id) => {
+    console.log(2);
+    return await Property.findByIdAndDelete(id);
+}
 exports.findByIdAndUpdate = (id, update) => Property.findByIdAndUpdate(id, update);
