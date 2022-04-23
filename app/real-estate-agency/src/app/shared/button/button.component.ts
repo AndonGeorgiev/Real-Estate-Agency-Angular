@@ -8,7 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class ButtonComponent implements OnInit {
 
   @Input() content: string='';
-  @Input() url: string="";
+  @Input() url?: string="";
   @Input() backgroundColor: string="#10566E";
   constructor() { }
 
