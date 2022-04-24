@@ -8,6 +8,7 @@ import { SharedModule } from '../shared/shared.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CreateEstateComponent } from './create-estate/create-estate.component';
+import { EstateEditComponent } from './estate-edit/estate-edit.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { CreateEstateComponent } from './create-estate/create-estate.component';
     EstateCardComponent,
     EstatesListComponent,
     EstateDetailsComponent,
-    CreateEstateComponent
+    CreateEstateComponent,
+    EstateEditComponent
   ],
   imports: [
     CommonModule,
@@ -28,7 +30,8 @@ import { CreateEstateComponent } from './create-estate/create-estate.component';
   exports: [
     EstatesListComponent,
     EstateDetailsComponent,
-    EstateDetailsComponent
+    EstateDetailsComponent,
+    EstateEditComponent
   ],
   bootstrap:[EstateDetailsComponent]
 })

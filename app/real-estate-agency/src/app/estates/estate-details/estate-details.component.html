@@ -18,7 +18,8 @@
             <br>
             <app-button [url]="'/catalog/' + estate._id + '/sell'" [content]="'Sell'" [backgroundColor]="'green'"></app-button>
             <button class="delete" (click)="deleteHandle()">delete</button>
-            <app-button [url]="'/catalog/' + estate._id + '/edit'" [content]="'Edit'" [backgroundColor]="'yellow'"></app-button>
+            <app-button [url]="'/catalog/edit/' + estate._id" [backgroundColor]="'yellow'" [content]="'Edit'"></app-button>
+
         </section>
 
         <section class="broker_statistic">
