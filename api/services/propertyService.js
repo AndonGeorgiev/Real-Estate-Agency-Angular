@@ -5,7 +5,7 @@ exports.getAll = () => Property.find({});
 exports.getOne = async(_id) => {
     let property = await Property.findById(_id);
     const update = { views: +property.views + 1 }
-    await Property.edit(_id, update);
+    await Property.findByIdAndUpdate(_id, update);
     property = await Property.findById(_id);
     return property;
 };
