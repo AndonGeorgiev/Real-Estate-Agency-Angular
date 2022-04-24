@@ -56,8 +56,8 @@ export class EstateEditComponent implements OnInit {
       description: description,
     }
     console.log(1);
-     this.estatesService.createEstate$(estateData).subscribe(() =>{
-      this.router.navigate(['/catalog']); 
+     this.estatesService.editEstate$(this.id, estateData).subscribe(() =>{
+      this.router.navigate([`/catalog/${this.id}`]); 
      });
 
   }

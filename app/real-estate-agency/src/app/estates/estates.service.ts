@@ -33,4 +33,8 @@ export class EstatesService {
   deleteEstate$(id : string) : Observable<IEstate> {
     return this.httpClient.delete<IEstate>('http://localhost:3030/properties/delete/'+ id)
   }
+
+  editEstate$(id : string, estateData: {img: string, price: number, address: string, description: string, title: string}): Observable<IEstate> {
+    return this.httpClient.post<IEstate>('http://localhost:3030/properties/edit/'+ id, estateData)
+  }
 }
