@@ -29,15 +29,14 @@ const propertySchema = new mongoose.Schema({
     views: {
         type: Number,
         default: 0,
-    }
+    },
 
-    // broker: {
-    //     type: mongoose.Schema.Types.ObjectId,
-    //     ref: 'user'
-    // },
+    creator: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User'
+    },
 
-    // likes: [{ type: mongoose.Schema.Types.ObjectId, ref: 'user' }],
-
+    likers: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
 
 });
 

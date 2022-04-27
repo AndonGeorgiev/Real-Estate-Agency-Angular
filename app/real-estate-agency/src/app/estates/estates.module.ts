@@ -11,6 +11,7 @@ import { CreateEstateComponent } from './create-estate/create-estate.component';
 import { EstateEditComponent } from './estate-edit/estate-edit.component';
 
 
+
 @NgModule({
   declarations: [
     EstateCardComponent,
@@ -25,7 +26,7 @@ import { EstateEditComponent } from './estate-edit/estate-edit.component';
     SharedModule,
     NgbModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   exports: [
     EstatesListComponent,

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -7,11 +8,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  isUser : boolean = true;
-  isBroker : boolean = true;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  get isUser(): any {
+    return window.localStorage.getItem("user")
+  }
+ get isBroker(): boolean {
+    if(window.localStorage.getItem("user")){
+      let user = JSON.parse(window.localStorage.getItem("user" )|| '{}');
+      let isBroker = user.user.role == "broker";
+      return isBroker;
+    }else{
+      return false;
+    }
+  }
+
+  logout() : void {
+    window.localStorage.clear();
   }
 
 }

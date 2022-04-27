@@ -9,7 +9,9 @@
 
         <!-- Login Form -->
         <form [formGroup]="loginFormGroup" (ngSubmit)="handleLoginForm()">
-
+            <p *ngIf="error" class="error">
+                Email or password is incorrect!
+            </p>
             <input formControlName="email" type="text" id="login" [class.input-error]="loginFormGroup.controls['email'].touched && loginFormGroup.controls['email'].invalid " [class.input-valid]="loginFormGroup.controls['email'].touched && loginFormGroup.controls['email'].valid"
                 class="fadeIn second" name="login" placeholder="email">
 

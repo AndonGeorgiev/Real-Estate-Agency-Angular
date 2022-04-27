@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map, Observable } from 'rxjs';
+import { UserService } from '../auth/user.service';
 
 export interface IEstate{
   "_id": string,
@@ -16,7 +17,8 @@ export interface IEstate{
 })
 export class EstatesService {
 
-  constructor(private httpClient: HttpClient) { }
+  userId?: string;
+  constructor(private httpClient: HttpClient, private userService: UserService) { }
 
   getEstates$() : Observable<IEstate[]>{
     return this.httpClient.get<IEstate[]>('http://localhost:3030/properties');
@@ -27,7 +29,8 @@ export class EstatesService {
   }
 
   createEstate$(estateData: {img: string, price: number, address: string, description: string, title: string}): Observable<IEstate> {
-    return this.httpClient.post<IEstate>('http://localhost:3030/properties/create', estateData)
+    this.userId = this.userService.getUserId();
+    return this.httpClient.post<IEstate>('http://localhost:3030/properties/create', {...estateData, creator: this.userId})
   }
 
   deleteEstate$(id : string) : Observable<IEstate> {

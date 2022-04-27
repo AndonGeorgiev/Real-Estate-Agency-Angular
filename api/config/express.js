@@ -5,11 +5,19 @@ const cors = require('cors');
 
 
 function expressConfig(app) {
-    app.use(cors());
+    app.use(cors({
+        orig: 'http://localhost:4200/',
+        credentials: true
+    }));
+
+
     app.use(express.urlencoded({ extended: true }));
     app.use(express.json());
     app.use(cookieParser());
-    app.use(routes)
+    app.use(routes);
+
+
+
 
 }
 
