@@ -64,13 +64,13 @@
                 </p>
 
                 <p *ngIf="createEstateFormGroup.controls['description'].errors?.['maxlength']" class="error">
-                    Min length is 250 characters!
+                    Max length is 800 characters!
                 </p>
 
 
             </ng-container>
 
-            <input type="submit" [disabled]="createEstateFormGroup.invalid" class="fadeIn fourth" value="Log In">
+            <input type="submit" [disabled]="createEstateFormGroup.invalid" class="fadeIn fourth" value="Create">
         </form>
 
     </div>

@@ -14,7 +14,6 @@ import { ChangeDetectionStrategy } from '@angular/compiler';
 })
 export class EstateDetailsComponent implements OnInit {
   model?: NgbDateStruct;
-  time = { hour: 10, minute: 10 };
   estate!: IEstate;
   id: string = "";
   userId?: any;
@@ -26,7 +25,7 @@ export class EstateDetailsComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit(): void {
-    this.userId = this.userService.getUserId()
+    
     this.activatedRoute.params
       .pipe(
         tap(params => {
@@ -39,6 +38,7 @@ export class EstateDetailsComponent implements OnInit {
       .subscribe(estate => {
         this.estate = estate;
       })
+      this.userId = this.userService.getUserId()
   }
 
   deleteHandle(): void {

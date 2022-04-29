@@ -22,4 +22,5 @@ describe('EstateDetailsComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
 });
