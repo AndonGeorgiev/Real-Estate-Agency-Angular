@@ -50,3 +50,8 @@ This is my defense project for Angular Course at SoftUni. (Mar-Apr 2022)
 
 ## My Profile Page
 ![ My Profile Page](./../real-estate-agency/src/assets/picture/myProfilePage.png)
+
+# Graphic Resources
+
+## The logo design was made by:
+ - [Martin Stefanov](https://www.behance.net/martinstefanov/projects) - Motion and graphic designer.
