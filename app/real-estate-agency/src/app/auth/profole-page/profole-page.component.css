@@ -51,11 +51,12 @@ li {
 section {
     width: 100%;
     border: 2px solid rgb(0, 0, 0);
-    padding: 100px;
+    padding: 20px;
     margin: 20px;
+    height: 800px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     overflow: auto;
 }
@@ -87,4 +88,8 @@ button {
     font-family: 'Anek Bangla', sans-serif;
     border: none;
     background: #163A5F;
+}
+
+.estatesSell {
+    margin-bottom: 50px;
 }

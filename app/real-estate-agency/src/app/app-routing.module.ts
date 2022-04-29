@@ -8,15 +8,20 @@ import { EstateDetailsComponent } from './estates/estate-details/estate-details.
 import { EstateEditComponent } from './estates/estate-edit/estate-edit.component';
 import { EstatesListComponent } from './estates/estates-list/estates-list.component';
 import { SaveDateFormComponent } from './estates/save-date-form/save-date-form.component';
+import { BrokerGuard } from './guards/broker.guard';
+import { GuestGuard } from './guards/guest.guard';
+import { ProfileGuard } from './guards/profile.guard';
 import { HomeComponent } from './pages/home/home.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 const routes: Routes = [
   {
+    canActivate: [GuestGuard],
     path: '',
     component: HomeComponent,
   }, 
   {
+    canActivate: [BrokerGuard],
     path: 'catalog/create',
     pathMatch: 'full',
     component: CreateEstateComponent,
@@ -32,6 +37,7 @@ const routes: Routes = [
     component: EstateDetailsComponent,
   },
   {
+    canActivate: [BrokerGuard],
     path: 'catalog/edit/:id',
     pathMatch: 'full',
     component: EstateEditComponent,
@@ -44,14 +50,17 @@ const routes: Routes = [
  
  
   {
+    canActivate: [GuestGuard],
     path: 'login',
     component: LoginComponent,
   },
   {
+    canActivate: [GuestGuard],
     path: 'register',
     component: RegisterComponent,
   },
   {
+    canActivate: [ProfileGuard],
     path: 'profile',
     component: ProfolePageComponent,
   },

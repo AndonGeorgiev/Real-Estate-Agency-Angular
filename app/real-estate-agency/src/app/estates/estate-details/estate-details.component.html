@@ -49,7 +49,7 @@
         </div>
     </section>
 
-    <section class="user_actions" *ngIf="estate.creator == userId">
+    <section class="user_actions date-list" *ngIf="estate.creator == userId">
         <div>
             <h3>Saved View Dates</h3>
             <div class="saved-date" *ngFor="let date of estate.savedDates ">
