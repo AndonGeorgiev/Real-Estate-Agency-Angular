@@ -36,7 +36,7 @@
         </section>
     </div>
 
-    <section class="user_actions" *ngIf="estate.creator !== userId">
+    <section class="user_actions" *ngIf="estate.creator !== userId && userId">
         <div>
             <h3>Actions</h3>
             <button [ngClass]="{'like': isLiked, 'dislike': !isLiked}" (click)="addInLovesHandle()">Add in loves</button>

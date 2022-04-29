@@ -15,7 +15,7 @@ export class CreateEstateComponent implements OnInit {
     'price': new FormControl('', [Validators.required]),
     'address': new FormControl('', [Validators.required, Validators.minLength(6)]),
     'title': new FormControl('', [Validators.required, Validators.minLength(6)]),
-    'description': new FormControl('', [Validators.required, Validators.minLength(30), Validators.maxLength(250)])
+    'description': new FormControl('', [Validators.required, Validators.minLength(30), Validators.maxLength(800)])
   })
   constructor(
     private formBuilder: FormBuilder,
