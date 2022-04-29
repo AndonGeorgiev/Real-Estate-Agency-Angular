@@ -25,7 +25,7 @@ This is my defense project for Angular Course at SoftUni. (Mar-Apr 2022)
   * sell estates.
   * see the statistics.
 
-# :hammer: Build With JavaScript
+# :hammer: Build With 
  - Angular
  - node.js
  - RxJS: library for reactive programming using Observables
