@@ -8,19 +8,19 @@ This is my defense project for Angular Course at SoftUni. (Mar-Apr 2022)
  Dream Home is a web application that connects brokers with estates buyers and makes their contact easy. It has the following functionality:
 
  - Guest Users can:
-  - see the welcome page.
-  - see the estate catalog page.
-  - create profile from the register page.
+  * see the welcome page.
+  * see the estate catalog page.
+  * create profile from the register page.
  - Logged buyers can:
-  - like and dislike estates.
-  - book an appointment for viewing.
-  - see their profile page.
+  * like and dislike estates.
+  * book an appointment for viewing.
+  * see their profile page.
  - Logged brokers can:
-  - like and dislike estates.
-  - book an appointment for viewing.
-  - see their profile page.
-  - create new estates.
-  - edit estates.
-  - delete estates.
-  - sell estates.
-  - see the statistics.
+  * like and dislike estates.
+  * book an appointment for viewing.
+  * see their profile page.
+  * create new estates.
+  * edit estates.
+  * delete estates.
+  * sell estates.
+  * see the statistics.
