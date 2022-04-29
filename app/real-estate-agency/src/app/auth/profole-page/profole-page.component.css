@@ -53,7 +53,6 @@ section {
     border: 2px solid rgb(0, 0, 0);
     padding: 100px;
     margin: 20px;
-    height: 800px;
     display: flex;
     flex-direction: column;
     justify-content: center;

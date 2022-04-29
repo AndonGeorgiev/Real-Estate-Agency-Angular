@@ -30,8 +30,6 @@ let config = {
 })
 export class UserService {
 
-userId: string = this.getUserId()
-
   constructor(private httpClient: HttpClient) { }
 
   login$(userData: { email: string, password: string }): Observable<IUser> {

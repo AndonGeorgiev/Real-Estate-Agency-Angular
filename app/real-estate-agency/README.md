@@ -24,3 +24,29 @@ This is my defense project for Angular Course at SoftUni. (Mar-Apr 2022)
   * delete estates.
   * sell estates.
   * see the statistics.
+
+# :hammer: Build With JavaScript
+ - Angular
+ - node.js
+ - RxJS: library for reactive programming using Observables
+ - Routing
+ - Authentication
+ - Reactive Forms
+ - Dependency Injection
+
+# Screenshots
+
+## Home Page
+![Home Page](./../real-estate-agency/src/assets/picture/homePage.png)
+
+## Catalog Page
+![Catalog Page](./../real-estate-agency/src/assets/picture/catalogPage.png)
+
+## Details Page
+![Details Page](./../real-estate-agency/src/assets/picture/detailsPage.png)
+
+## Edit Page
+![Edit Page](./../real-estate-agency/src/assets/picture/edit%20page.png)
+
+## My Profile Page
+![ My Profile Page](./../real-estate-agency/src/assets/picture/myProfilePage.png)
