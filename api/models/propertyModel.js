@@ -37,6 +37,7 @@ const propertySchema = new mongoose.Schema({
     },
 
     likers: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
+    savedDates: []
 
 });
 

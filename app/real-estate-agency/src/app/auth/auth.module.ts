@@ -4,6 +4,8 @@ import { LoginComponent } from './login/login.component';
 import { RouterModule } from '@angular/router';
 import { RegisterComponent } from './register/register.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ProfolePageComponent } from './profole-page/profole-page.component';
+import { EstatesModule } from '../estates/estates.module';
 
 
 
@@ -12,16 +14,19 @@ import { ReactiveFormsModule } from '@angular/forms';
   declarations: [
     LoginComponent,
     RegisterComponent,
+    ProfolePageComponent,
     
   ],
   imports: [
     CommonModule,
     RouterModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    EstatesModule,
   ],
   exports: [
     LoginComponent,
     RegisterComponent,
+    ProfolePageComponent
   ]
 })
 export class AuthModule { }

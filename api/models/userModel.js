@@ -5,7 +5,11 @@ const userSchema = new mongoose.Schema({
     password: String,
     role: String,
     refreshToken: String,
-    properties: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Property' }],
+    sells: {
+        type: Number,
+        default: 0,
+    },
+
 });
 
 const User = mongoose.model('User', userSchema);

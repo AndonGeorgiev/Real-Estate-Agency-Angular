@@ -69,6 +69,10 @@ span {
     border: 3px solid #163A5F
 }
 
+.user_actions {
+    margin-top: 64px;
+}
+
 .broker_action h3,
 .broker_statistic h3,
 .user_actions h3 {
@@ -123,6 +127,37 @@ button {
 
 .delete {
     background-color: red;
+    margin-right: 10px;
 }
 
-.broker_statistic {}
+.sell {
+    background-color: green;
+    margin-right: 10px;
+}
+
+.like {
+    background-color: transparent;
+    color: black;
+    border: 2px solid black;
+}
+
+.dislike {
+    background-color: #163A5F;
+    color: #fff;
+}
+
+.save-date {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.saved-date {
+    margin-top: 20px;
+    background-color: #cdcdcd;
+    padding: 15px;
+}
+
+.saved-date h4 {
+    margin-left: 3px;
+}

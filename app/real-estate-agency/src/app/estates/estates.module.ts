@@ -9,6 +9,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CreateEstateComponent } from './create-estate/create-estate.component';
 import { EstateEditComponent } from './estate-edit/estate-edit.component';
+import { SaveDateFormComponent } from './save-date-form/save-date-form.component';
 
 
 
@@ -18,7 +19,8 @@ import { EstateEditComponent } from './estate-edit/estate-edit.component';
     EstatesListComponent,
     EstateDetailsComponent,
     CreateEstateComponent,
-    EstateEditComponent
+    EstateEditComponent,
+    SaveDateFormComponent
   ],
   imports: [
     CommonModule,
@@ -32,7 +34,8 @@ import { EstateEditComponent } from './estate-edit/estate-edit.component';
     EstatesListComponent,
     EstateDetailsComponent,
     EstateDetailsComponent,
-    EstateEditComponent
+    EstateEditComponent,
+    EstateCardComponent
   ],
   bootstrap:[EstateDetailsComponent]
 })

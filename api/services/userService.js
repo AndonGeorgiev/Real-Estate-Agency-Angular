@@ -2,6 +2,7 @@ const User = require('./../models/userModel.js');
 const jwt = require('jsonwebtoken');
 
 exports.register = ({ email, password, role }) => User.create({ email, password, role });
+exports.getUser = (userId) => User.findById(userId);
 
 exports.login = async({ email, password }) => {
     let user = await User.findOne({ email, password })

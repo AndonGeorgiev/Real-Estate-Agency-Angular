@@ -1,6 +1,8 @@
 <header>
     <nav>
-        <h1><a routerLink="/">Real Estate</a></h1>
+
+        <a routerLink="/"> <img src="./../../../assets/picture/logo.png" alt="asd"></a>
+
         <ul>
             <div *ngIf="isUser">
                 <li><a routerLink="/catalog">Catalog</a></li>
@@ -8,7 +10,7 @@
                     <li><a routerLink="/catalog/create">Add Estate</a></li>
                 </div>
                 <li><a routerLink='/' (click)="logout()">Logout</a></li>
-                <li><a routerLink="/profile/:id">My Profile</a></li>
+                <li><a routerLink="/profile">My Profile</a></li>
 
 
             </div>

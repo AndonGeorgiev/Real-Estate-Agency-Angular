@@ -11,6 +11,9 @@ export interface IEstate{
   "address": string,
   "description": string,
   "views": number,
+  "likers": string[],
+  "savedDates": any,
+  'creator': string,
 }
 @Injectable({
   providedIn: 'root'
@@ -37,7 +40,23 @@ export class EstatesService {
     return this.httpClient.delete<IEstate>('http://localhost:3030/properties/delete/'+ id)
   }
 
+  sellEstate$(id : string, userId : string) : Observable<IEstate> {
+    return this.httpClient.post<IEstate>('http://localhost:3030/properties/sell/'+ id,{userId})
+  }
+
   editEstate$(id : string, estateData: {img: string, price: number, address: string, description: string, title: string}): Observable<IEstate> {
     return this.httpClient.post<IEstate>('http://localhost:3030/properties/edit/'+ id, estateData)
+  }
+
+  like$(id : string, userId : string) : Observable<IEstate> {
+    return this.httpClient.post<IEstate>('http://localhost:3030/properties/like/'+ id,{userId})
+  }
+
+  dislike$(id : string, userId : string) : Observable<IEstate> {
+    return this.httpClient.post<IEstate>('http://localhost:3030/properties/dislike/'+ id,{userId})
+  }
+
+  saveDate$(id : string, data: any) : Observable<any> {
+    return this.httpClient.post<any>('http://localhost:3030/properties/date/'+ id,{data})
   }
 }

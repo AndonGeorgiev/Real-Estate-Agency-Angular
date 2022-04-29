@@ -12,7 +12,8 @@ export interface IUser {
   email: string,
   password: string,
   role: string,
-  __v: number;
+  sells: number,
+  __v: number,
 }
 
 let config = {
@@ -29,20 +30,16 @@ let config = {
 })
 export class UserService {
 
-  constructor(private httpClient: HttpClient) {
-    console.log('UserService#constructor')
-  }
+userId: string = this.getUserId()
+
+  constructor(private httpClient: HttpClient) { }
 
   login$(userData: { email: string, password: string }): Observable<IUser> {
     return this.httpClient.post<IUser>(`http://localhost:3030/login`, userData)
-
   }
 
-  getProfile$(): Observable<IUser> {
-    return this.httpClient.get<IUser>(`http://localhost:3030/users/profile`)
-  }
-
-  logout(): void {
+  getProfile$(id: string): Observable<any> {
+    return this.httpClient.get<any>(`http://localhost:3030/users/profile/`+ id)
   }
 
   register$(userData: CreateUserDto): Observable<IUser> {

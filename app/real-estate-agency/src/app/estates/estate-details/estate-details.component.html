@@ -12,11 +12,11 @@
         </section>
     </section>
 
-    <div class="broker">
+    <div class="broker" *ngIf="estate.creator == userId">
         <section class="broker_action">
             <h3>Actions</h3>
             <br>
-            <app-button [url]="'/catalog/' + estate._id + '/sell'" [content]="'Sell'" [backgroundColor]="'green'"></app-button>
+            <button class="sell" (click)="sellHandle()">Sell</button>
             <button class="delete" (click)="deleteHandle()">delete</button>
             <app-button [url]="'/catalog/edit/' + estate._id" [backgroundColor]="'yellow'" [content]="'Edit'"></app-button>
 
@@ -28,28 +28,41 @@
                 <i class="fa-solid fa-eye"></i> {{estate.views}}
             </h4>
             <h4>
-                <i class="fa-solid fa-heart"></i> {{estate.views}}
+                <i class="fa-solid fa-heart"></i> {{estate.likers.length}}
             </h4>
             <h4>
-                <i class="fa-solid fa-calendar-day"></i> {{estate.views}}
+                <i class="fa-solid fa-calendar-day"></i> {{estate.savedDates.length}}
             </h4>
         </section>
     </div>
 
-    <section class="user_actions">
+    <section class="user_actions" *ngIf="estate.creator !== userId">
         <div>
             <h3>Actions</h3>
-            <app-button [url]="'/catalog/like/' + estate._id" [content]="'Add in Loves'"></app-button>
+            <button [ngClass]="{'like': isLiked, 'dislike': !isLiked}" (click)="addInLovesHandle()">Add in loves</button>
         </div>
 
 
-        <form class="form">
-            <h3>Save View Date</h3>
-            <label for="date">Chose date!</label>
-            <input type="date" id="date">
-            <label for="time">Chose time!</label>
-            <input type="time" id="time">
-            <input type="submit" id="submit">
-        </form>
+        <div>
+            <h3>Save View Date!</h3>
+            <app-button class="save-date" [url]="'/catalog/date/' + estate._id" [backgroundColor]="'green'" [content]="'Save Date!'"></app-button>
+        </div>
+    </section>
+
+    <section class="user_actions" *ngIf="estate.creator == userId">
+        <div>
+            <h3>Saved View Dates</h3>
+            <div class="saved-date" *ngFor="let date of estate.savedDates ">
+                <span> date:</span>
+                <h4>{{date.date}}</h4>
+
+                <span> start time:</span>
+                <h4>{{date.time}}</h4>
+
+                <span> Tel for contact:</span>
+                <h4>{{date.tel}}</h4>
+
+            </div>
+        </div>
     </section>
 </article>

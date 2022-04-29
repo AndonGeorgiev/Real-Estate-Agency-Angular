@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const userService = require('../services/userService');
-const store = require('store');
+const { getProperties, likeProperties } = require('../services/propertyService');
 
 router.post('/register', async(req, res, next) => {
     // res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200');
@@ -10,16 +10,20 @@ router.post('/register', async(req, res, next) => {
     try {
         let user = await userService.register({ email, password, role });
         let { accessToken, refreshToken } = await userService.login({ email, password });
-        if (accessToken) {
-            store.set('user', accessToken)
-                // localStorage.setItem("auth", accessToken);
-        }
         res.json({ user, accessToken });
         res.end();
     } catch (error) {
         next(error)
     }
 });
+
+router.get('/users/profile/:id', async(req, res) => {
+    const userId = req.params.id
+    const userData = await userService.getUser(userId);
+    const properties = await getProperties(userId);
+    const getLikesProperties = await likeProperties(userId)
+    res.json({ userData, properties, getLikesProperties });
+})
 
 router.post('/login', async(req, res) => {
     try {

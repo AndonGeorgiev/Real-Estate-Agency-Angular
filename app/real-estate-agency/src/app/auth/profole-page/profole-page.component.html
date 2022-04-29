@@ -1,0 +1,53 @@
+<div class="container">
+
+    <div class="user-card">
+        <div class="profile-img">
+            <i class="fa-solid fa-user"></i>
+        </div>
+
+        <div class="user-data">
+            <span>Email:</span>
+            <h4>{{userInfo.email}}</h4>
+
+            <span>Role:</span>
+            <h4>{{userInfo.role}}</h4>
+
+            <span *ngIf="userInfo.role == 'broker'">Sells:</span>
+            <h4 *ngIf="userInfo.role == 'broker'">{{userInfo.sells}}</h4>
+
+
+        </div>
+    </div>
+
+    <section>
+        <h2>My favorites estates</h2>
+        <ul *ngIf="likesEstates">
+            <li *ngFor="let estate of likesEstates">
+                <app-estate-card [estate]="estate"></app-estate-card>
+            </li>
+        </ul>
+        <div class="no-likes" *ngIf="likesEstates.length == 0">
+            <h3>You dot have favorites estates</h3>
+            <h4>You can view our estates here:</h4>
+            <button routerLink="/catalog"> View catalog</button>
+        </div>
+    </section>
+
+
+</div>
+
+<div class="container" *ngIf="userInfo.role == 'broker'">
+    <section class="estates">
+        <h2>My estates</h2>
+        <ul *ngIf="userEstates">
+            <li *ngFor="let estate of userEstates">
+                <app-estate-card [estate]="estate"></app-estate-card>
+            </li>
+        </ul>
+        <div class="no-likes" *ngIf="userEstates.length == 0">
+            <h3>You dot have estates</h3>
+            <h4>You can add estates here:</h4>
+            <button routerLink="/catalog/create">Add estate</button>
+        </div>
+    </section>
+</div>

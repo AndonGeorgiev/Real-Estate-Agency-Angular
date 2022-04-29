@@ -1,0 +1,47 @@
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+        <!-- Tabs Titles -->
+
+        <!-- Icon -->
+        <div class="fadeIn first">
+            <i class="fa-solid fa-house-chimney"></i>
+        </div>
+
+        <!-- Login Form -->
+        <form [formGroup]="saveDateFormGroup" (ngSubmit)="handleSaveDateForm()">
+
+            <input formControlName="date" type="date" [class.input-error]="saveDateFormGroup.controls['date'].touched && saveDateFormGroup.controls['date'].invalid " [class.input-valid]="saveDateFormGroup.controls['date'].touched && saveDateFormGroup.controls['date'].valid"
+                class="fadeIn second" placeholder="Choose a date">
+
+            <ng-container *ngIf="saveDateFormGroup.controls['date'].touched && saveDateFormGroup.controls['date'].invalid ">
+                <p *ngIf="saveDateFormGroup.controls['date'].errors?.['required']" class="error">
+                    Date is required!
+                </p>
+            </ng-container>
+
+            <input type="time" formControlName="time" [class.input-error]="saveDateFormGroup.controls['time'].touched && saveDateFormGroup.controls['time'].invalid " [class.input-valid]="saveDateFormGroup.controls['time'].touched && saveDateFormGroup.controls['time'].valid"
+                class="fadeIn third" placeholder="time">
+
+            <ng-container *ngIf="saveDateFormGroup.controls['time'].touched && saveDateFormGroup.controls['time'].invalid ">
+                <p *ngIf="saveDateFormGroup.controls['time'].errors?.['required']" class="error">
+                    Time is required!
+                </p>
+            </ng-container>
+
+            <input type="number" formControlName="tel" [class.input-error]="saveDateFormGroup.controls['tel'].touched && saveDateFormGroup.controls['tel'].invalid " [class.input-valid]="saveDateFormGroup.controls['tel'].touched && saveDateFormGroup.controls['tel'].valid"
+                class="fadeIn third" placeholder="Please enter telephone number!">
+
+            <ng-container *ngIf="saveDateFormGroup.controls['tel'].touched && saveDateFormGroup.controls['tel'].invalid ">
+                <p *ngIf="saveDateFormGroup.controls['tel'].errors?.['required']" class="error">
+                    Telephone is required!
+                </p>
+                <p *ngIf="saveDateFormGroup.controls['tel'].errors?.['minlength']" class="error">
+                    Min length is 6 characters!
+                </p>
+            </ng-container>
+
+            <input type="submit" [disabled]="saveDateFormGroup.invalid" class="fadeIn fourth" value="Save date">
+        </form>
+
+    </div>
+</div>
