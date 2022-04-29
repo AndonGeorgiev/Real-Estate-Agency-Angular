@@ -1,1 +1,1 @@
-![The logo of project]("C:\Users\andon\Downloads\Untitled-1 (1).png")
+![The logo of project](/app/real-estate-agency/src/assets/picture/logo.png)
