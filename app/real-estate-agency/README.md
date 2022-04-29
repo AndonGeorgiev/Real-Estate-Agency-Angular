@@ -55,3 +55,6 @@ This is my defense project for Angular Course at SoftUni. (Mar-Apr 2022)
 
 ## The logo design was made by:
  - [Martin Stefanov](https://www.behance.net/martinstefanov/projects) - Motion and graphic designer.
+
+# Show your opinion
+Give a :star: if you like this project!
